@@ -39,7 +39,6 @@
             $profilePic = "assets/images/profile-pics/profile.png";
             $date = date("Y-m-d");
 
-            echo "\n'$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic'";
             $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic')");
 
             return $result;
@@ -54,7 +53,10 @@
                 return;
             }
 
-            // TODO: Check if username exists
+            $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$un'"); 
+            if(mysqli_num_rows($checkUsernameQuery) != 0){
+                array_push($this->errorArray, Constants::$usernameTaken);
+            }
         }
     
         private function validateFirstname($fn){
@@ -82,7 +84,10 @@
                 return;
             }
 
-            // TODO: Check that username hasn't already been used
+            $checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'"); 
+            if(mysqli_num_rows($checkEmailQuery) != 0){
+                array_push($this->errorArray, Constants::$emailTaken);
+            }
         }
     
         private function validatePasswords($pw, $pw2){
