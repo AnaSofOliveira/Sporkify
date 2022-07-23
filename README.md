@@ -1,2 +1,1 @@
-# Sporkify
-This project 
+# Sporkify Project
