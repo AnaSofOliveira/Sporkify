@@ -2,10 +2,12 @@
 
     class Account{
 
+        private $con;
         private $errorArray; 
 
-        public function __construct(){
+        public function __construct($con){
             $this->errorArray = array();
+            $this->con = $con;
         }
 
         public function register($un, $fn, $ln, $em, $em2, $pw, $pw2){
@@ -19,7 +21,7 @@
             // Se não existirem erros após as validações acima
             if(empty($this->errorArray)){
                 // TODO: Insert into DB
-                return true;
+                return $this->insertUserDetais($un, $fn, $ln, $em, $pw);
             }else{
                 return false;
             }
@@ -30,6 +32,17 @@
                 $error = "";
             }
             return "<span class='errorMessage'>$error</span>";
+        }
+
+        private function insertUserDetais($un, $fn, $ln, $em, $pw){
+            $encrypetedPw = md5($pw); 
+            $profilePic = "assets/images/profile-pics/profile.png";
+            $date = date("Y-m-d");
+
+            $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic')");
+
+            return $result;
+            
         }
 
         private function validateUsername($un){
