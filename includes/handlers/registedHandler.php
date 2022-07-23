@@ -34,8 +34,6 @@
 
         $wasSuccessfull = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
-        echo "Was Successful: ".$wasSuccessfull;
-        
         if($wasSuccessfull){
             header("Location: index.php");
         }

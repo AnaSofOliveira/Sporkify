@@ -39,7 +39,8 @@
             $profilePic = "assets/images/profile-pics/profile.png";
             $date = date("Y-m-d");
 
-            $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic')");
+            echo "\n'$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic'";
+            $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic')");
 
             return $result;
             
@@ -47,7 +48,6 @@
 
         private function validateUsername($un){
 
-            echo "Username to validade: ".$un."| size: ".strlen($un);
             // tamanho do username precisa de estar entre 5 e 25
             if(strlen($un) > 25 || strlen($un) < 5){
                 array_push($this->errorArray, Constants::$usernameCharacters); 
