@@ -16,8 +16,6 @@ body{
     bottom: 0;
     position: fixed;
     min-width: 620px;
-    
-    /*height: 100px;  Remove later */
 }
 
 #nowPlayingBar{
@@ -31,6 +29,11 @@ body{
 #nowPlayingRight{
     width: 30%;
     min-width: 180px;
+}
+
+#nowPlayingRight{
+    position: relative;
+    margin-top: 16px;
 }
 
 #nowPlayingCenter{
@@ -50,13 +53,13 @@ body{
     display: table;
 }
 
-.buttons .controlButton{
+.controlButton{
     background-color: transparent;
     border: none;
     vertical-align: middle;
 }
 
-.buttons .controlButton img{
+.controlButton img{
     width: 20px;
     height: 20px;
 }
@@ -89,6 +92,7 @@ body{
     display: inline-flex;
     cursor: pointer;
     margin-top: 3px;
+    vertical-align: middle;
 }
 
 .progressBarBackground{
@@ -127,4 +131,14 @@ body{
 #nowPlayingLeft .trackInfo .artistName span{
     font-size: 12px;
     color: #a0a0a0;
+}
+
+.volumeBar{
+    width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar{
+    width: 125px;
 }
