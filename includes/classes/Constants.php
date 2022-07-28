@@ -15,7 +15,7 @@
         public static $emailTaken = "This e-mail already exists.";
 
         // Login Error Messages
-        public static $loginFailed = "Yout username or password was incorrect";
+        public static $loginFailed = "Your username or password was incorrect";
     
     }
 

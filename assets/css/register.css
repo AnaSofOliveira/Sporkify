@@ -23,8 +23,9 @@ html, body{
 }
 
 #loginContainer {
+    margin-top: 15%;
     width: 80%;
-    margin: 0 auto;
+    margin: 10% auto;
     position: relative;
     max-width: 1024px;
 }
@@ -76,6 +77,7 @@ html, body{
     color: #a0a0a0;
     font-size: 13px;
     margin-top: 15px;
+    display: block;
 }
 
 #inputContainer button{
@@ -134,7 +136,14 @@ html, body{
 #loginText li{
     font-size: 20px;
     list-style-type: none;
-    padding: 15px 60px;
+    padding: 5px 30px;
     background: url("../images/item.png") no-repeat 0 0;
-    background-size: 45px 45px;
+    background-size: 25px 25px;
+}
+
+#inputContainer .errorMessage{
+    color: #07d159;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
 }
