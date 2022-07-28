@@ -18,7 +18,19 @@
     <div id="nowPlayingBarContainer">
         <div id="nowPlayingBar">
             <div id="nowPlayingLeft">
-
+                <div class="content">
+                    <span class="albumLink">
+                        <img class="albumArtwork" src="https://media-exp1.licdn.com/dms/image/C4D0BAQFnn6OfqAHbcQ/company-logo_200_200/0/1647267997850?e=2147483647&v=beta&t=uuIPYBjcPCU9f8oGk38cSMvJiu29ilz4X66IFmnJHgo">
+                    </span>
+                    <div class="trackInfo">
+                        <span class="trackName">
+                            <span>Happy Birthday</span>
+                        </span>
+                        <span class="artistName">
+                            <span>Ana Oliveira</span>
+                        </span>
+                    </div>
+                </div>
             </div>
             <div id="nowPlayingCenter">
 
