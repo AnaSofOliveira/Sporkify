@@ -31,7 +31,6 @@
             $this->validateEmails($em, $em2);
             $this->validatePasswords($pw, $pw2);
 
-            print_r($this->errorArray);
             // Se não existirem erros após as validações acima
             if(empty($this->errorArray)){
                 // TODO: Insert into DB
