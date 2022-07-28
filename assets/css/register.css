@@ -135,6 +135,6 @@ html, body{
     font-size: 20px;
     list-style-type: none;
     padding: 15px 60px;
-    background: url("../images/5049211_earphone_headphone_headset_music_icon.png") no-repeat 0 0;
-
+    background: url("../images/item.png") no-repeat 0 0;
+    background-size: 45px 45px;
 }
