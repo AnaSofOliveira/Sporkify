@@ -1,27 +1,24 @@
-<?php
-    include("includes/config.php");
-    
-    if(isset($_SESSION['userLoggedIn'])){
-        $userLoggedIn = $_SESSION['userLoggedIn']; 
-    }else{
-        header("Location: register.php");
-    }
-?>
+<?php include("includes/header.php"); ?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <title>Welcome to Sporkify</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
+<h1 class="pageHeadingBig"> You might also Like</h1>
 
-    <div id="mainContainer">
-        <div id="topContainer">
-            <?php include("includes/navBarContainer.php"); ?>
-        </div>
+<div class="gridViewContainer">
 
-        <?php include("includes/nowPlayingBar.php"); ?>
-    </div>
-</body>
-</html>
+    <?php 
+        $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
+
+        while($row = mysqli_fetch_array($albumQuery)){
+            echo "<div class='gridViewItem'>
+                    <a href='album.php?id=".$row['id']."'>
+                        <img src='".$row['artworkPath']."'>
+                        <div class='gridViewInfo'>".$row['title']."</div>
+                    </a>
+                </div>";
+        }    
+    ?>
+
+</div>
+
+<?php include("includes/footer.php"); ?>
+
+
