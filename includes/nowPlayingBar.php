@@ -1,3 +1,45 @@
+<?php 
+
+    $song_query = mysqli_query($con, "SELECT id FROM songs ORDER BY RAND() LIMIT 10");
+    
+    $resutlArray = array();
+    while($row = mysqli_fetch_array($song_query)){
+        array_push($resutlArray, $row['id']);
+    }
+
+    $jsonArray = json_encode($resutlArray);
+?>
+
+<script>
+
+    $(document).ready(function(){
+        curentPlaylist = <?php echo $jsonArray ?>;
+        audioElement = new Audio();
+        setTrack(curentPlaylist[0], curentPlaylist, false);
+    });
+
+    function setTrack(trackId, newPlaylist, play){
+        audioElement.setTrack("assets/music/bensound-anewbeginning.mp3");
+        
+        if(play){
+            audioElement.play();
+        }        
+    }
+
+    function playSong(){
+        $(".controlButton.play").hide();
+        $(".controlButton.pause").show();
+        audioElement.play();
+    }
+
+    function pauseSong(){
+        $(".controlButton.play").show();
+        $(".controlButton.pause").hide();
+        audioElement.pause();
+    }
+    
+</script>
+
 <div id="nowPlayingBarContainer">
     <div id="nowPlayingBar">
         <div id="nowPlayingLeft">
@@ -28,11 +70,11 @@
                         <img src="assets/images/icons/previous.png" alt="Previous">
                     </button>
 
-                    <button class="controlButton play" title="Play">
+                    <button class="controlButton play" title="Play" onclick="playSong()">
                         <img src="assets/images/icons/play.png" alt="Play">
                     </button>
 
-                    <button class="controlButton pause" title="Pause" style="display: none;">
+                    <button class="controlButton pause" title="Pause" style="display: none;" onclick="pauseSong()">
                         <img src="assets/images/icons/pause.png" alt="Pause">
                     </button>
 
