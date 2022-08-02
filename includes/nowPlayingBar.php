@@ -15,18 +15,68 @@
     $(document).ready(function(){
         curentPlaylist = <?php echo $jsonArray ?>;
         audioElement = new Audio();
+        console.log("curentPlaylist: ", curentPlaylist);
         setTrack(curentPlaylist[0], curentPlaylist, false);
+    
+        $(".playbackBar .progressBar").mousedown(function(){
+            mousedown = true;
+        });
+
+        $(".playbackBar .progressBar").mousemove(function(event){
+            if(mousedown){
+                timeFromOffset(event, this);
+            }
+        });
+    
     });
 
-    function setTrack(trackId, newPlaylist, play){
-        audioElement.setTrack("assets/music/bensound-anewbeginning.mp3");
+
+    function timeFromOffset(mouse, progressBar){
+        var percentage = event.offsetX / $(this).width();
+
         
+
+
+
+    }
+
+    function setTrack(trackId, newPlaylist, play){
+        
+        $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId}, function(data){
+            
+            var track = JSON.parse(data);
+
+            $(".trackName span").text(track.title);
+
+            $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist}, function(data){
+                var artist = JSON.parse(data); 
+                console.log(artist);
+                $(".artistName span").text(artist.name);
+            });
+
+            $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album}, function(data){
+                var album = JSON.parse(data); 
+                console.log(album);
+
+                $(".albumLink img").attr("src", album.artworkPath);
+                
+            });
+
+            audioElement.setTrack(track);
+            playSong();
+        });
+
         if(play){
             audioElement.play();
         }        
     }
 
     function playSong(){
+
+        if(audioElement.audio.currentTime == 0){
+            $.post("includes/handlers/ajax/updatePlays.php", {songId: audioElement.currentlyPlaying.id});
+        }
+
         $(".controlButton.play").hide();
         $(".controlButton.pause").show();
         audioElement.play();
@@ -45,14 +95,14 @@
         <div id="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img class="albumArtwork" src="https://media-exp1.licdn.com/dms/image/C4D0BAQFnn6OfqAHbcQ/company-logo_200_200/0/1647267997850?e=2147483647&v=beta&t=uuIPYBjcPCU9f8oGk38cSMvJiu29ilz4X66IFmnJHgo">
+                    <img class="albumArtwork" src="">
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span>Happy Birthday</span>
+                        <span></span>
                     </span>
                     <span class="artistName">
-                        <span>Ana Oliveira</span>
+                        <span></span>
                     </span>
                 </div>
             </div>
