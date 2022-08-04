@@ -17,27 +17,60 @@
         audioElement = new Audio();
         console.log("curentPlaylist: ", curentPlaylist);
         setTrack(curentPlaylist[0], curentPlaylist, false);
+        updateVolumeProgressBar(audioElement.audio);
     
         $(".playbackBar .progressBar").mousedown(function(){
-            mousedown = true;
+            mouseDown = true;
         });
 
         $(".playbackBar .progressBar").mousemove(function(event){
-            if(mousedown){
+            if(mouseDown){
                 timeFromOffset(event, this);
             }
+        });
+
+        $(".playbackBar .progressBar").mouseup(function(event){
+            timeFromOffset(event, this);
+        });
+
+
+
+        $(".volumeBar .progressBar").mousedown(function(){
+            mouseDown = true;
+        });
+
+        $(".volumeBar .progressBar").mousemove(function(event){
+            if(mouseDown){
+                var percentage = event.offsetX / $(this).width();
+                
+                if( percentage >= 0 && percentage <= 1){
+                    audioElement.audio.volume = percentage;
+                }
+            }
+        });
+
+        $(".volumeBar .progressBar").mouseup(function(event){
+            var percentage = event.offsetX / $(this).width();
+                
+                if( percentage >= 0 && percentage <= 1){
+                    audioElement.audio.volume = percentage;
+                }
+            
+        });
+
+
+        $(document).mouseup(function(){
+            mouseDown = false;
         });
     
     });
 
 
     function timeFromOffset(mouse, progressBar){
-        var percentage = event.offsetX / $(this).width();
-
+        var percentage = mouse.offsetX / $(progressBar).width() * 100;
+        var seconds = audioElement.audio.duration * (percentage / 100);
         
-
-
-
+        audioElement.setTime(seconds);
     }
 
     function setTrack(trackId, newPlaylist, play){
@@ -63,11 +96,10 @@
             });
 
             audioElement.setTrack(track);
-            playSong();
         });
 
         if(play){
-            audioElement.play();
+            playSong();
         }        
     }
 
