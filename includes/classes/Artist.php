@@ -17,7 +17,16 @@
             return $artist['name'];
         }
 
+        public function getSongIds(){
+            $query = mysqli_query($this->con, "SELECT id FROM songs WHERE artist ='$this->id' ORDER BY plays ASC"); 
+            $IdArray = array();
 
+            while($row = mysqli_fetch_array($query)){
+                array_push($IdArray, $row['id']);
+            }
+
+            return $IdArray;
+        }
 
     }
 
