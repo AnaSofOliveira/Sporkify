@@ -20,7 +20,7 @@
 
     <div class="rightSection">
         <h2><?php echo $album->getTitle(); ?></h2>
-        <p role="link" tabindex="0" onclick="openPage('artist.php?id=$artistId')">By <?php echo $artist->getName(); ?></p>
+        <p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artist->getId(); ?>')">By <?php echo $artist->getName(); ?></p>
         <p><?php echo $album->getNumberSongs(); ?> Songs</p>
     </div>
 </div>
@@ -49,7 +49,8 @@
                     </div>
 
                     <div class='trackOptions'>
-                        <img class='optionsButton' src='assets/images/icons/more.png'> 
+                        <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+                        <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'> 
                     </div>
 
                     <div class='trackDuration>
@@ -67,3 +68,8 @@
         </script>
     </ul>
 </div>
+
+<nav class="optionsMenu">
+	<input type="hidden" class="songId">
+	<?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+</nav>
