@@ -21,7 +21,7 @@
             <span role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItemLink">Your music</span>
             </div>
             <div class="navItem">
-            <span role="link" tabindex="0" onclick="openPage('profile.php')" class="navItemLink">User Profile</span>
+            <span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink">User Profile</span>
             </div>
         </div>
     </nav>
