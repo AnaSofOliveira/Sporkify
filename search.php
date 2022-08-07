@@ -46,7 +46,7 @@
     }
 ?>
 
-<div class="trackListContainer borderBotton">
+<div class="trackListContainer borderBottom">
     <h2>Songs</h2>
     <ul class="trackList">
 
@@ -104,7 +104,7 @@
     </ul>
 </div>
 
-<div class="artistsContainer borderBotton">
+<div class="artistsContainer borderBottom">
     
     <h2>Artists</h2>
 

@@ -12,7 +12,7 @@
     
 ?>
 
-<div class="entityInfo borderBotton" >
+<div class="entityInfo borderBottom" >
     <div class="centerSection">
         <div class="artistInfo">
             <h1 class="artistName"><?php echo $artist->getName();?></h1>
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="trackListContainer borderBotton">
+<div class="trackListContainer borderBottom">
     <h2>Songs</h2>
     <ul class="trackList">
 
