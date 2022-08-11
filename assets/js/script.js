@@ -153,6 +153,24 @@ function removeSongFromDB(button){
     }
 }
 
+function removeUserFromDB(button){
+    var prompt = confirm("Are you sure you want to delete this user?");
+
+	var userId = $(button).prevAll(".userId").val();
+
+    if(prompt){
+        $.post("includes/handlers/ajax/deleteUser.php", {userId: userId})
+        .done(function(error){
+
+            if(error != ""){
+                alert(error);
+                return;
+            }
+            openPage("removeUserDetails.php");
+        })
+    }
+}
+
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");
 	if(menu.css("display") != "none") {

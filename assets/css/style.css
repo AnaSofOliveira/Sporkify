@@ -560,11 +560,13 @@ input:focus{
     width: 100%;
 }
 
-.songListContainer{
+.songListContainer, 
+.userListContainer{
     margin: 50px;
 }
 
-.songList{
+.songList, 
+.userList{
     padding: 0px;
 }
 
@@ -634,5 +636,78 @@ input:focus{
 }
 
 .songListRow:hover .songOptions img{
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+.userListRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.userListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.userListRow:hover{
+    background-color: #282828;
+}
+
+.userListRow .profilePic{
+    width: 5%;
+    float: left;
+}
+
+.userListRow .profilePic img{
+    width: 40px;
+    position: absolute;
+    border: 2px solid #a0a0a0;
+    border-radius: 100%;
+}
+
+.userListRow .userInfo{
+    width: 75%;
+    float: left;
+}
+
+.userListRow .userInfo span{
+    display: block;
+}
+
+.userListRow .userInfo .username{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.userListRow .roleInfo{
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.userListRow .userOptions{
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.userListRow .userOptions img{
+    width: 30px; 
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.userListRow:hover .userOptions img{
     visibility: visible;
 }

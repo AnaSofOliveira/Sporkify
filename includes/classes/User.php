@@ -14,6 +14,12 @@
             return $this->username;
         }
 
+        public function getId(){
+            $query = mysqli_query($this->con, "SELECT id FROM users WHERE username='$this->username'");
+            $row = mysqli_fetch_array($query); 
+            return $row['id'];
+        }
+
         public function getEmail(){
             $query = mysqli_query($this->con, "SELECT email FROM users WHERE username='$this->username'");
             $row = mysqli_fetch_array($query); 
@@ -31,6 +37,13 @@
             $row = mysqli_fetch_array($query); 
 
             return $row['profilePic'];
+        }
+
+        public function getRole(){
+            $query = mysqli_query($this->con, "SELECT role FROM users WHERE username='$this->username'"); 
+            $row = mysqli_fetch_array($query); 
+
+            return $row['role'];
         }
     }
 

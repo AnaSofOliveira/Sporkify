@@ -52,7 +52,7 @@
             $profilePic = "assets/images/profile-pics/profile.png";
             $date = date("Y-m-d");
 
-            $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic')");
+            $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic, role) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic', 'user')");
 
             return $result;
             

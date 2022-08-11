@@ -25,10 +25,12 @@
             </div>
         </div>
 
-        <div class="group bottom">
-            <div class="navItem">
-                <span role="link" tabindex="0" onclick="openPage('admin.php')" class="navItemLink">Admin</span>
+        <?php if($userLoggedIn->getRole() == "admin") {?>
+            <div class="group bottom">
+                <div class="navItem">
+                    <span role="link" tabindex="0" onclick="openPage('admin.php')" class="navItemLink">Admin</span>
+                </div>
             </div>
-        </div>
+        <?php }?>
     </nav>
 </div>
