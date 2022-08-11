@@ -55,7 +55,7 @@
             $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '$term%' LIMIT 10");
 
             if(mysqli_num_rows($songsQuery) == 0){
-                echo "<span class='noResults'>No songs found matching".$term."</span>";
+                echo "<span class='noResults'>No songs found matching ".$term."</span>";
             }
 
             $songIdArray = array();
@@ -113,7 +113,7 @@
         $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
         
         if(mysqli_num_rows($artistsQuery) == 0){
-            echo "<span class='noResults'>No artists found matching".$term."</span>";
+            echo "<span class='noResults'>No artists found matching ".$term."</span>";
         }
 
         while($row = mysqli_fetch_array($artistsQuery)){
@@ -138,7 +138,7 @@
         $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '$term%' LIMIT 10");
 
         if(mysqli_num_rows($albumQuery) == 0){
-            echo "<span class='noResults'>No albums found matching".$term."</span>";
+            echo "<span class='noResults'>No albums found matching ".$term."</span>";
         }
 
         while($row = mysqli_fetch_array($albumQuery)){

@@ -24,5 +24,11 @@
             <span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"><?php echo $userLoggedIn->getFirstAndLastName(); ?></span>
             </div>
         </div>
+
+        <div class="group bottom">
+            <div class="navItem">
+                <span role="link" tabindex="0" onclick="openPage('admin.php')" class="navItemLink">Admin</span>
+            </div>
+        </div>
     </nav>
 </div>

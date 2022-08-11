@@ -134,6 +134,25 @@ function deletePlaylist(playlistId){
     }
 }
 
+function removeSongFromDB(button){
+
+    var prompt = confirm("Are you sure you want to delete this song?");
+
+	var songId = $(button).prevAll(".songId").val();
+
+    if(prompt){
+        $.post("includes/handlers/ajax/deleteSong.php", {songId: songId})
+        .done(function(error){
+
+            if(error != ""){
+                alert(error);
+                return;
+            }
+            openPage("removeSongDetails.php");
+        })
+    }
+}
+
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");
 	if(menu.css("display") != "none") {

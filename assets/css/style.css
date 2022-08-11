@@ -15,6 +15,12 @@ body{
     background-color: #181818;
     font-size: 14px;
     min-width: 720px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 #nowPlayingBarContainer{
@@ -165,6 +171,7 @@ body{
 }
 
 .navBar{
+    height: 85vh;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -205,6 +212,10 @@ body{
     right: 0;
     top: 6px;
     width: 25px;
+}
+
+.bottom{
+    margin-top: auto;
 }
 
 .navItemLink:hover{
@@ -399,7 +410,8 @@ body{
 
 .trackListContainer h2, 
 .gridViewContainer h2, 
-.artistsContainer h2{
+.artistsContainer h2,
+.songListContainer h2{
     text-align: center;
 }
 
@@ -540,4 +552,87 @@ input:focus{
 .userDetails .container .message{
     color: #2ebd59;
     font-weight: 300;
+}
+
+.buttonGroup{
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.songListContainer{
+    margin: 50px;
+}
+
+.songList{
+    padding: 0px;
+}
+
+.songListRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.songListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.songListRow:hover{
+    background-color: #282828;
+}
+
+.songListRow .songCount{
+    width: 5%;
+    float: left;
+}
+
+.songListRow .songCount img{
+    width: 20px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.songListRow:hover .songCount img{
+    visibility: visible;
+}
+
+.songListRow .songCount span{
+    visibility: visible;
+}
+
+.songListRow:hover .songCount span{
+    visibility: hidden;
+}
+
+.songListRow .songInfo{
+    width: 75%;
+    float: left;
+}
+
+.songListRow .songInfo span{
+    display: block;
+}
+
+.songListRow .songInfo .songName{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.songListRow .songOptions{
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+.songListRow .songOptions img{
+    width: 30px; 
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.songListRow:hover .songOptions img{
+    visibility: visible;
 }
