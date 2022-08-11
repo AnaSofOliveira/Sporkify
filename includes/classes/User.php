@@ -25,6 +25,13 @@
             $row = mysqli_fetch_array($query); 
             return $row['name'];
         }
+
+        public function getProfilePic(){
+            $query = mysqli_query($this->con, "SELECT profilePic FROM users WHERE username='$this->username'"); 
+            $row = mysqli_fetch_array($query); 
+
+            return $row['profilePic'];
+        }
     }
 
 ?>

@@ -501,8 +501,14 @@ input:focus{
     -moz-appearance: none;
 }
 
-.userInfo h1{
+.userInfo{
     text-align: center;
+}
+
+.userInfo img{
+    margin-bottom: 20px;
+    border: 3px solid #a0a0a0;
+    border-radius: 100px;
 }
 
 .userDetails{

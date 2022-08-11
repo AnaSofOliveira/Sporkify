@@ -7,7 +7,7 @@
     <div class="centerSection">
         <div class="userInfo">
             <h1><?php echo $userLoggedIn->getFirstAndLastName(); ?></h1>
-
+            <img src='<?php echo $userLoggedIn->getProfilePic();?>'>
         </div>
     </div>
 
