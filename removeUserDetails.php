@@ -26,23 +26,26 @@
         
             
                 $result = "<li class='userListRow'>
-                            <div class='profilePic'>
-                                <img src='".$urlPicture."'>
-                            </div>
+                                <div class='profilePic'>
+                                    <img src='".$urlPicture."'>
+                                </div>
 
-                            <div class='userInfo'>
-                                <span class='username'>".$username."</span>
-                                <span class='email'>".$email."</span>
-                            </div>
-                            <div class='roleInfo'>
-                                <span class='role'>".$role."</span>
-                            </div>
+                                <div class='userInfo'>
+                                    <span class='username'>".$username."</span>
+                                    <span class='email'>".$email."</span>
+                                </div>
+                                <div class='roleInfo'>
+                                    <span class='role'>".$role."</span>
+                                </div>
 
-                            <div class='userOptions'>
-                                <input type='hidden' class='userId' value='" . $id . "'>"; 
+                                <div class='userOptions'>
+                                    <input type='hidden' class='userId' value='" . $id . "'>"; 
 
                 if($role != "admin"){
-                    $result = $result."<img class='optionsButton' src='assets/images/icons/trash.png' onclick='removeUserFromDB(this)'> ";
+                    $result = $result."<img class='optionsButton' src='assets/images/icons/trash.png' onclick='removeUserFromDB(this)'> 
+                                        <img class='optionsButton' src='assets/images/icons/lock_close.png' onclick='changePermission(this, \"".$role."\")'>";
+                }else{
+                    $result = $result."<img class='optionsButton' src='assets/images/icons/lock_open.png' onclick='changePermission(this, \"".$role."\")'>";
                 }
 
                 $result = $result."</div></li>" ;

@@ -631,23 +631,8 @@ input:focus{
 
 .songListRow .songOptions img{
     width: 30px; 
-    visibility: hidden;
     cursor: pointer;
 }
-
-.songListRow:hover .songOptions img{
-    visibility: visible;
-}
-
-
-
-
-
-
-
-
-
-
 
 .userListRow{
     height: 40px;
@@ -699,15 +684,10 @@ input:focus{
 .userListRow .userOptions{
     width: 10%;
     float: left;
-    text-align: center;
+    text-align: right;
 }
 
 .userListRow .userOptions img{
     width: 30px; 
-    visibility: hidden;
     cursor: pointer;
-}
-
-.userListRow:hover .userOptions img{
-    visibility: visible;
 }

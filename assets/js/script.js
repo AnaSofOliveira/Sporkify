@@ -158,8 +158,23 @@ function removeUserFromDB(button){
 
 	var userId = $(button).prevAll(".userId").val();
 
+}
+
+function changePermission(button, role){
+    var userId = $(button).prevAll(".userId").val();
+
+    console.log("UserId: " + userId);
+    console.log("Role: " + role);
+
+    var prompt;
+    if(role != "admin"){
+        prompt = confirm("Are you sure you want this user to be an administrator?");
+    }else{
+        prompt = confirm("Do you want to remove the admnistrator functions from this user?");
+    }
+
     if(prompt){
-        $.post("includes/handlers/ajax/deleteUser.php", {userId: userId})
+        $.post("includes/handlers/ajax/updateRole.php", {userId: userId, role: role})
         .done(function(error){
 
             if(error != ""){
@@ -168,7 +183,8 @@ function removeUserFromDB(button){
             }
             openPage("removeUserDetails.php");
         })
-    }
+    } 
+
 }
 
 function hideOptionsMenu() {
