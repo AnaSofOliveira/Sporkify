@@ -7,8 +7,7 @@
     <div class="buttonItems">
         <button class="button" onclick="">Add Song</button>
         <button class="button" onclick="openPage('removeSongDetails.php')">Remove Song</button>
-        <button class="button" onclick="openPage('removeUserDetails.php')">Remove User</button>
-        <button class="button" onclick="">Change Privileges</button>
+        <button class="button" onclick="openPage('manageUserDetails.php')">Manage User</button>
     </div>
 
     /** Opções/Buttões

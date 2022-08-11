@@ -158,6 +158,18 @@ function removeUserFromDB(button){
 
 	var userId = $(button).prevAll(".userId").val();
 
+    if(prompt){
+        $.post("includes/handlers/ajax/deleteUser.php", {userId: userId})
+        .done(function(error){
+
+            if(error != ""){
+                alert(error);
+                return;
+            }
+            openPage("manageUserDetails.php");
+        })
+    }
+
 }
 
 function changePermission(button, role){
@@ -181,7 +193,7 @@ function changePermission(button, role){
                 alert(error);
                 return;
             }
-            openPage("removeUserDetails.php");
+            openPage("manageUserDetails.php");
         })
     } 
 
