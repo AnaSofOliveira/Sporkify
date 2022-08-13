@@ -5,7 +5,7 @@
 <div class="buttonGroup">
 
     <div class="buttonItems">
-        <button class="button" onclick="">Add Song</button>
+        <button class="button" onclick="openPage('addSong.php')">Add Song</button>
         <button class="button" onclick="openPage('removeSongDetails.php')">Remove Song</button>
         <button class="button" onclick="openPage('manageUserDetails.php')">Manage User</button>
     </div>
