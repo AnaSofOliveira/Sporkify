@@ -56,21 +56,98 @@
 
             $__cURL = new CurlServer();
 
-            $req_url = "https://api.spotify.com/v1/search?q=name:".$term."&type=album,track&limit=3";
+            $encodedTerm = urlencode($term);
 
+            $req_url = "https://api.spotify.com/v1/search?q=name:".$encodedTerm."%20track:".$encodedTerm."&type=track&limit=15&market=PT";
+            
             $response = $__cURL->get_request($req_url, $_SESSION['spotify_token']->access_token); 
-
+            
             //print_r($response);
-            echo "<h1>Albuns: </h1>";
-            echo "<pre>";
-            print_r($response->albums); 
-            echo "</pre>";
+            //echo "<h1>Albuns: </h1>";
+            //echo "<pre>";
+            //print_r($response->albums); 
+            //echo "</pre>";
 
             
-            echo "<h1>Tracks: </h1>";
-            echo "<pre>";
-            print_r($response->tracks);
-            echo "</pre>"; 
+            /* echo "<h1>Tracks: </h1>"; */
+            /* echo "<pre>"; */
+            //print_r($response->tracks->items);
+
+            foreach($response->tracks->items as $track){
+                /* echo "<p>Track: ".$track->id; */
+
+                $image_url = $track->album->images[1]->url;
+
+                /* echo "\nImageURL: ";
+                print_r($image_url); */
+
+                $trackId = $track->id;
+                $req_url = "https://api.spotify.com/v1/tracks/".$trackId;
+                $response = $__cURL->get_request($req_url, $_SESSION['spotify_token']->access_token);
+
+                //echo "\nResponse: ";
+                //print_r($response);
+
+
+                /* echo "\nName: ";
+                print_r($response->name);
+                echo "\npreview_url: ";
+                print_r($response->preview_url);
+                echo "\ntype: ";
+                print_r($response->type);
+                echo "\nduration_ms: ";
+                print_r($response->duration_ms); */
+
+
+                $artists = $track->artists; 
+
+                foreach($artists as $artist){
+                    $artistName = $artist->name; 
+                    
+                    /* echo "\nArtist Name: ";
+                    print_r($artistName); */
+                }
+
+                //Divide by 1,0000
+                $timestampSeconds = $response->duration_ms / 1000;
+
+                //Format it into a human-readable datetime.
+                $formatted = date("i:s", $timestampSeconds);
+                /* echo "\nduration: ";
+                print_r($formatted);
+                
+                
+                //print_r($response);
+
+                echo "</p>"; */
+
+
+
+
+                echo "<li class='trackListRow'>
+                <div class='trackCount'>
+                        <img class='play' src='assets/images/icons/play-white.png' >
+                        <span class='trackNumber'>1</span>
+                    </div>
+                <div class='trackInfo'>
+                    <span class='trackName'>".$response->name."</span>
+                    <span class='artirsName'>".$artistName."</span>
+                </div>
+
+                <div class='trackOptions'>
+                    
+                    <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'> 
+                </div>
+
+                <div class='trackDuration>
+                    <span class='duration'>".$formatted."</span>
+                </div>
+            </li>";
+
+
+            }
+
+            //echo "</pre>"; 
 
 
 
@@ -126,57 +203,3 @@
         </script>
     </ul>
 </div>
-
-<div class="artistsContainer borderBottom">
-    
-    <h2>Artists</h2>
-
-    <?php 
-    
-        $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
-        
-        if(mysqli_num_rows($artistsQuery) == 0){
-            echo "<span class='noResults'>No artists found matching ".$term."</span>";
-        }
-
-        while($row = mysqli_fetch_array($artistsQuery)){
-            $artistFound = new Artist($con, $row['id']);
-
-            echo "<div class='searchResultRow'>
-            <div class='artistName'>
-                <span role='link' tabindex='0' onclick='openPage(\"artist.php?id=".$artistFound->getId()."\");'>
-                ".$artistFound->getName()."
-                </span>
-            </div>
-            
-            </div>";
-        }
-
-    ?>
-</div>
-
-<div class="gridViewContainer">
-    <h2>Albums</h2>
-    <?php 
-        $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '$term%' LIMIT 10");
-
-        if(mysqli_num_rows($albumQuery) == 0){
-            echo "<span class='noResults'>No albums found matching ".$term."</span>";
-        }
-
-        while($row = mysqli_fetch_array($albumQuery)){
-            echo "<div class='gridViewItem'>
-            <span role='link' tabindex='0' onclick='openPage(\"album.php?id=".$row['id']."\")'>
-                        <img src='".$row['artworkPath']."'>
-                        <div class='gridViewInfo'>".$row['title']."</div>
-                    </span>
-                </div>";
-        }    
-    ?>
-    
-</div>
-
-<nav class="optionsMenu">
-	<input type="hidden" class="songId">
-	<?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
-</nav>
