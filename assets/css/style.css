@@ -691,3 +691,80 @@ input:focus{
     width: 30px; 
     cursor: pointer;
 }
+
+
+
+
+
+
+.spotifyTrackList{
+    padding: 0px;
+}
+
+.spotifyTrackListRow{
+    text-align: center;
+    height: 70px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.spotifyTrackListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.spotifyTrackListRow:hover{
+    background-color: #282828;
+}
+
+.spotifyTrackListRow .spotifyTrackCount{
+    width: 8%;
+    float: left;
+}
+
+.spotifyTrackListRow .spotifyTrackCount img{
+    width: 4%;
+    border: 1px solid #939393;
+    position: absolute;
+    cursor: pointer;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo{
+    width: 62%;
+    float: left;
+    margin: 10px;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo span{
+    display: block;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo .spotifyTrackName{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.spotifyTrackListRow .spotifyTrackOptions{
+    width: 5%;
+    float: left;
+    text-align: left;
+}
+
+.spotifyTrackListRow .spotifyTrackOptions img{
+    width: 30px;
+    visibility: hidden;
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.spotifyTrackListRow:hover .spotifyTrackOptions img{
+    visibility: visible;
+}
+
+.spotifyTrackListRow .spotifyTrackDuration{
+    width: 15%;
+    float: left;
+    text-align: right;
+}
