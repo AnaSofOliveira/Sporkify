@@ -726,7 +726,6 @@ input:focus{
     width: 4%;
     border: 1px solid #939393;
     position: absolute;
-    cursor: pointer;
 }
 
 .spotifyTrackListRow .spotifyTrackInfo{
@@ -767,4 +766,5 @@ input:focus{
     width: 15%;
     float: left;
     text-align: right;
+    padding: 30px 10px;
 }
