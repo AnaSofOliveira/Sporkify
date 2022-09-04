@@ -54,6 +54,8 @@
 
         <?php 
 
+            echo $_SESSION['spotify_token']->access_token;
+
             $__cURL = new CurlServer();
 
             $encodedTerm = urlencode($term);

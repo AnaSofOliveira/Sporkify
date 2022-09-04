@@ -30,7 +30,7 @@
 
         // Store user token in Session
         $_SESSION['spotify_token'] = $used_token_data;
-        header("Location: spotifyAddSong.php?userLoggedIn=".$userLoggedIn->getUsername());
+        header("Location: spotifyTrackIdeas.php?userLoggedIn=".$userLoggedIn->getUsername());
 
     }
 
