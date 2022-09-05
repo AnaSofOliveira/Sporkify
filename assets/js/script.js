@@ -9,6 +9,7 @@ var shuffle = false;
 var userLoggedIn; 
 var timer; 
 
+
 $(document).click(function(click) {
 	var target = $(click.target);
 
@@ -38,6 +39,39 @@ $(document).on("change", "select.playlist", function() {
 		select.val("");
 	});
 });
+
+function changeThemeMode(){
+    var dark = $("body").hasClass("dark"); 
+
+    if(dark){
+        //ativar light mode e alterar texto do botão
+        $("body").toggleClass("dark"); 
+        
+        $(".mainViewContainer").css("color", "#fff");
+        $("body").css("background-color", "#181818");
+
+        $(".button").css("border", "2px solid #fff");
+        $(".button").css("color", "#fff");
+
+        $(".userInfo h1").css("color", "#fff");
+
+        $("#mode").html("Light Mode");
+
+    }else{
+        //ativar dark mode e alterar texto do botão
+        $("body").toggleClass("dark"); 
+
+        $(".mainViewContainer").css("color", "#000");
+        $("body").css("background-color", "#F5EDDC");
+        $(".button").css("border", "2px solid #000");
+        $(".button").css("color", "#000");
+
+        $(".userInfo h1").css("color", "#000");
+
+        $("#mode").html("Dark Mode"); 
+    }
+    console.log(dark);
+}
 
 function updateEmail(emailClass){
     var emailValue = $("." + emailClass).val();

@@ -13,6 +13,7 @@
 
     <div class="buttonItems">
         <button class="button" onclick="openPage('updateDetails.php')">User Details</button>
+        <button class="button" id="mode" onclick="changeThemeMode()">Light Mode</button>
         <button class="button" onclick="logout()">Loggout</button>
     </div>
 </div>

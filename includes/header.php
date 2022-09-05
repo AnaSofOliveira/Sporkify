@@ -23,7 +23,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
 </head>
-<body>
+<body class="dark">
 
     <div id="mainContainer">
         <div id="topContainer">
