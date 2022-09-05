@@ -12,15 +12,6 @@
         <button class="button" onclick="userLogInRequest()">Spotify Ideas</button>
     </div>
 
-    /** Opções/Buttões
-    
-    - Add song
-    - Remove song
-    - Remove user
-    - Change Privileges
-    - 
-    
-    */
 </div>
 
 

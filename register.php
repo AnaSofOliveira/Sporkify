@@ -22,26 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/register.js"></script>
 </head>
-<body>
-
-<?php
-    if(isset($_POST['registerButton'])){
-        echo '<script>
-            $(document).ready(function(){
-                $("#loginForm").hide();
-                $("#registerForm").show();
-            });    
-        </script>';
-    }else {
-        echo '<script>
-        $(document).ready(function(){
-            $("#loginForm").show();
-            $("#registerForm").hide();
-        });    
-    </script>';
-    }
-?>
-    
+<body>   
 
     <div id="background">
         <div id="loginContainer">
@@ -59,13 +40,10 @@
                     <?php echo $account->getError(Constants::$loginFailed); ?>
                     <button type="submit" name="loginButton">Login</button>
 
-                    <div class="hasAccountText">
-                        <span id="hideLogin">Don't have an account yet? Signup here.</span>
-                    </div>
                 </form>
 
-
-
+            </div>
+            <div id="inputContainer">
 
                 <form id="registerForm" action="register.php" method="POST">
                     <h2>Create your free account</h2>
@@ -116,23 +94,10 @@
                         <input id="password2" name="password2" type="password" placeholder="Your password" required>
                     </p>
                     <button type="submit" name="registerButton">Sign Up</button>
-                    <div class="hasAccountText">
-                        <span id="hideRegister">Already have an account? Login here.</span>
-                    </div>
+                    
                 </form>
             </div>
 
-            <div id="loginText">
-                <h1>Get great music, right now</h1>
-                <h2>Listen to loads of songs for free</h2>
-
-                <ul>
-                    <li>Discover music you'll fall in love with</li>
-                    <li>Create your own playlists</li>
-                    <li>Follow artists to keep up to date</li>
-                </ul>
-
-            </div>
         </div>
     </div>
 </body>
