@@ -1,0 +1,6 @@
+Add song
+Add album
+Add genre
+Add artist
+
+Add song to album
