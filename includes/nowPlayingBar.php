@@ -110,19 +110,37 @@
 	function setRepeat() {
 		repeat = !repeat;
 		var imageName = repeat ? "repeat-active.png" : "repeat.png";
-		$(".controlButton.repeat img").attr("src", "assets/images/icons/" + imageName);
+
+		var dark = $("body").hasClass("dark"); 
+    	if(dark){
+			$(".controlButton.repeat img").attr("src", "assets/images/icons/dark/" + imageName);
+		}else{			
+			$(".controlButton.repeat img").attr("src", "assets/images/icons/light/" + imageName);
+		}
 	}
 
 	function setMute() {
 		audioElement.audio.muted = !audioElement.audio.muted;
 		var imageName = audioElement.audio.muted ? "volume-mute.png" : "volume.png";
-		$(".controlButton.volume img").attr("src", "assets/images/icons/" + imageName);
+		
+		var dark = $("body").hasClass("dark"); 
+    	if(dark){
+			$(".controlButton.volume img").attr("src", "assets/images/icons/dark/" + imageName);
+		}else{
+			$(".controlButton.volume img").attr("src", "assets/images/icons/light/" + imageName);
+		}
 	}
 
 	function setShuffle() {
 		shuffle = !shuffle;
 		var imageName = shuffle ? "shuffle-active.png" : "shuffle.png";
-		$(".controlButton.shuffle img").attr("src", "assets/images/icons/" + imageName);
+
+		var dark = $("body").hasClass("dark"); 
+    	if(dark){
+			$(".controlButton.shuffle img").attr("src", "assets/images/icons/dark/" + imageName);
+		}else{
+			$(".controlButton.shuffle img").attr("src", "assets/images/icons/light/" + imageName);
+		}
 
 		if(shuffle == true) {
 			//Randomize playlist
@@ -234,27 +252,27 @@
 
                 <div class="buttons">
                     <button class="controlButton shuffle" title="Shuffle" onclick="setShuffle()">
-                        <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <img src="assets/images/icons/dark/shuffle.png" alt="Shuffle">
                     </button>
 
                     <button class="controlButton previous" title="Previous" onclick="prevSong()">
-                        <img src="assets/images/icons/previous.png" alt="Previous">
+                        <img src="assets/images/icons/dark/previous.png" alt="Previous">
                     </button>
 
                     <button class="controlButton play" title="Play" onclick="playSong()">
-                        <img src="assets/images/icons/play.png" alt="Play">
+                        <img src="assets/images/icons/dark/play.png" alt="Play">
                     </button>
 
                     <button class="controlButton pause" title="Pause" style="display: none;" onclick="pauseSong()">
-                        <img src="assets/images/icons/pause.png" alt="Pause">
+                        <img src="assets/images/icons/dark/pause.png" alt="Pause">
                     </button>
 
                     <button class="controlButton next" title="Next" onclick="nextSong()">
-                        <img src="assets/images/icons/next.png" alt="Next">
+                        <img src="assets/images/icons/dark/next.png" alt="Next">
                     </button>
 
                     <button class="controlButton repeat" title="Repeat" onclick="setRepeat()">
-                        <img src="assets/images/icons/repeat.png" alt="Repeat">
+                        <img src="assets/images/icons/dark/repeat.png" alt="Repeat">
                     </button>
                 </div> 
 
@@ -276,7 +294,7 @@
         <div id="nowPlayingRight">
             <div class="volumeBar">
                 <button class="controlButton volume" title="Volume" onclick="setMute()">
-                    <img src="assets/images/icons/volume.png" alt="Volume">
+                    <img src="assets/images/icons/dark/volume.png" alt="Volume">
                 </button>
 
                 <div class="progressBar">

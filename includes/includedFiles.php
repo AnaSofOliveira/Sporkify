@@ -8,6 +8,10 @@
         include("includes/classes/Song.php");
         include("includes/classes/Playlist.php");
 
+        echo "<script>
+                applyTheme();
+            </script>";
+
         if(isset($_GET['userLoggedIn'])){
             $userLoggedIn = new User($con, $_GET['userLoggedIn']);
         }else{
@@ -19,7 +23,9 @@
         include("includes/footer.php");  
 
         $url = $_SERVER['REQUEST_URI'];
-        echo "<script>openPage('$url');</script>";
+        echo "<script>
+                openPage('$url');
+            </script>";
         exit();
     }
 

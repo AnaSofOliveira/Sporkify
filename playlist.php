@@ -42,7 +42,7 @@
 
                 echo "<li class='trackListRow'>
                     <div class='trackCount'>
-                        <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"".$playlistSong->getId()."\", tempPlaylist, true)'>
+                        <img class='play' src='assets/images/icons/dark/play-white.png' onclick='setTrack(\"".$playlistSong->getId()."\", tempPlaylist, true)'>
                         <span class='trackNumber'>$rowNumber</span>
                     </div>
 
@@ -53,7 +53,7 @@
 
                     <div class='trackOptions'>
                         <input type='hidden' class='songId' value='" . $playlistSong->getId() . "'>
-                        <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'> 
+                        <img class='optionsButton' src='assets/images/icons/dark/more.png' onclick='showOptionsMenu(this)'> 
                     </div>
 
                     <div class='trackDuration>

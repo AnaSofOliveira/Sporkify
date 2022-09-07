@@ -40,14 +40,53 @@ $(document).on("change", "select.playlist", function() {
 });
 
 function changeThemeMode(){
+    $("body").toggleClass("dark"); 
+    applyTheme();  
+}
+
+function applyTheme(){
     var dark = $("body").hasClass("dark"); 
     if(dark){
         $("#style").attr("href", "assets/css/darkTheme.css");
+        $(".play img").attr("src", "assets/images/icons/dark/play.png");
+        $(".shuffle img").attr("src", "assets/images/icons/dark/shuffle.png");
+        $(".previous img").attr("src", "assets/images/icons/dark/previous.png");
+        $(".pause img").attr("src", "assets/images/icons/dark/pause.png");
+        $(".next img").attr("src", "assets/images/icons/dark/next.png");
+        $(".repeat img").attr("src", "assets/images/icons/dark/repeat.png");
+        $(".volume img").attr("src", "assets/images/icons/dark/volume.png");
+        
+        $(".trackCount .play").attr("src", "assets/images/icons/dark/play-white.png");
+        $(".trackOptions .optionsButton").attr("src", "assets/images/icons/dark/more.png");
+        $(".songOptions .optionsButton").attr("src", "assets/images/icons/dark/trash.png");
+
+        $(".userOptions .trash").attr("src", "assets/images/icons/dark/trash.png");
+        $(".userOptions .lock_close").attr("src", "assets/images/icons/dark/lock_close.png");
+        $(".userOptions .lock_open").attr("src", "assets/images/icons/dark/lock_open.png");
+
+        $(".group span img").attr("src", "assets/images/icons/dark/search.png");
+
     }else{
         $("#style").attr("href", "assets/css/lightTheme.css");
-    }
-    
-    $("body").toggleClass("dark"); 
+        $(".play img").attr("src", "assets/images/icons/light/play.png");
+        $(".shuffle img").attr("src", "assets/images/icons/light/shuffle.png");
+        $(".previous img").attr("src", "assets/images/icons/light/previous.png");
+        $(".pause img").attr("src", "assets/images/icons/light/pause.png");
+        $(".next img").attr("src", "assets/images/icons/light/next.png");
+        $(".repeat img").attr("src", "assets/images/icons/light/repeat.png");
+        $(".volume img").attr("src", "assets/images/icons/light/volume.png");
+
+        $(".trackCount .play").attr("src", "assets/images/icons/light/play-white.png");
+        $(".trackOptions .optionsButton").attr("src", "assets/images/icons/light/more.png");
+        $(".songOptions .optionsButton").attr("src", "assets/images/icons/light/trash.png");
+
+        $(".userOptions .trash").attr("src", "assets/images/icons/light/trash.png");
+        $(".userOptions .lock_close").attr("src", "assets/images/icons/light/lock_close.png");
+        $(".userOptions .lock_open").attr("src", "assets/images/icons/light/lock_open.png");
+
+        $(".group span img").attr("src", "assets/images/icons/light/search.png");
+
+    }  
 }
 
 function updateEmail(emailClass){

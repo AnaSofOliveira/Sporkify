@@ -42,10 +42,10 @@
                                     <input type='hidden' class='userId' value='" . $id . "'>"; 
 
                 if($role != "admin"){
-                    $result = $result."<img class='optionsButton' src='assets/images/icons/trash.png' onclick='removeUserFromDB(this)'> 
-                                        <img class='optionsButton' src='assets/images/icons/lock_close.png' onclick='changePermission(this, \"".$role."\")'>";
+                    $result = $result."<img class='trash' src='assets/images/icons/dark/trash.png' onclick='removeUserFromDB(this)'> 
+                                        <img class='lock_close' src='assets/images/icons/dark/lock_close.png' onclick='changePermission(this, \"".$role."\")'>";
                 }else{
-                    $result = $result."<img class='optionsButton' src='assets/images/icons/lock_open.png' onclick='changePermission(this, \"".$role."\")'>";
+                    $result = $result."<img class='lock_open' src='assets/images/icons/dark/lock_open.png' onclick='changePermission(this, \"".$role."\")'>";
                 }
 
                 $result = $result."</div></li>" ;

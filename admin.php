@@ -9,7 +9,7 @@
         <button class="button" onclick="openPage('addSong.php')">Add Song</button>
         <button class="button" onclick="openPage('removeSongDetails.php')">Remove Song</button>
         <button class="button" onclick="openPage('manageUserDetails.php')">Manage User</button>
-        <button class="button" onclick="userLogInRequest()">Spotify Ideas</button>
+        <button class="button green" onclick="userLogInRequest()">Spotify Ideas</button>
     </div>
 
 </div>

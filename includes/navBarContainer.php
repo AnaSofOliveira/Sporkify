@@ -8,7 +8,7 @@
             <div class="navItem">
             <span role="link" tabindex="0" onclick="openPage('search.php')"  class="navItemLink">
                     Search 
-                    <img src="assets/images/icons/search.png" class="icon" alt="search">
+                    <img src="assets/images/icons/dark/search.png" class="icon" alt="search">
             </span>
             </div>
         </div>

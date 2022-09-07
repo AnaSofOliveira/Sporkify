@@ -28,7 +28,7 @@
             
                 echo "<li class='songListRow'>
                     <div class='songCount'>
-                        <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"".$id."\", tempPlaylist, true)'>
+                        <img class='play' src='assets/images/icons/dark/play-white.png' onclick='setTrack(\"".$id."\", tempPlaylist, true)'>
                         <span class='trackNumber'>$rowNumber</span>
                     </div>
 
@@ -39,7 +39,7 @@
 
                     <div class='songOptions'>
                         <input type='hidden' class='songId' value='" . $id . "'>
-                        <img class='optionsButton' src='assets/images/icons/trash.png' onclick='removeSongFromDB(this)'> 
+                        <img class='optionsButton' src='assets/images/icons/dark/trash.png' onclick='removeSongFromDB(this)'> 
                     </div>
                 </li>";
 
