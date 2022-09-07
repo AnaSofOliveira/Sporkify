@@ -1,0 +1,781 @@
+html, 
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+*{
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+body{
+    background-color: #181818;
+    font-size: 14px;
+    min-width: 720px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+#dark{
+    color: #000;
+    background-color: #F5EDDC;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#nowPlayingBarContainer{
+    width: 100%;
+    background-color: #282828;
+    bottom: 0;
+    position: fixed;
+    min-width: 620px;
+}
+
+#nowPlayingBar{
+    display: flex;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#nowPlayingLeft, 
+#nowPlayingRight{
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingRight{
+    position: relative;
+    margin-top: 16px;
+}
+
+#nowPlayingCenter{
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+#nowPlayingBar .content{
+    width: 100%;
+    height: 57px;
+}
+
+.playerControls .buttons{
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton{
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton img{
+    width: 20px;
+    height: 20px;
+}
+
+.controlButton.play img, 
+.controlButton.pause img{
+    width: 32px;
+    height: 32px;
+}
+
+.controlButton:hover{
+    cursor: pointer;
+}
+
+.progressTime{
+    color: #a0a0a0;
+    font-size: 11px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.playbackBar{
+    display: flex;
+    vertical-align: middle;
+}
+
+.progressBar{
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+
+.progressBarBackground{
+    background-color: #404040;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress{
+    background-color: #a0a0a0;
+    height: 4px;
+    width: 0%; /* Varia consoante o tempo de musica reproduzido*/
+    border-radius: 2px;
+}
+
+.albumArtwork{
+    height: 100%;
+    max-width: 57px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+#nowPlayingLeft .trackInfo {
+    display: table;
+}
+
+#nowPlayingLeft .trackInfo .trackName{
+    margin: 6px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+
+#nowPlayingLeft .trackInfo .trackName span{
+    color: #fff;
+}
+
+#nowPlayingLeft .trackInfo .artistName span{
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+.volumeBar{
+    width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar{
+    width: 125px;
+}
+
+#topContainer{
+    min-height: 100%;
+    width: 100%;
+}
+
+#navBarContainer{
+    background-color: #000;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navBar{
+    height: 85vh;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.navBar a{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+
+.navBar .group{
+    border-top:  1px solid #a0a0a0;
+    padding: 10px 0;
+}
+
+.navItem {
+    padding: 10px 2px;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navItemLink{
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.navItemLink .icon{
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 25px;
+}
+
+.bottom{
+    margin-top: auto;
+}
+
+.navItemLink:hover{
+    color: #fff;
+}
+
+#mainViewContainer{
+    color: #fff;
+    margin-left: 220px;
+    padding-bottom: 90px;
+    width: calc(100% - 220px);
+}
+
+#mainContent{
+    padding: 0 50px;
+}
+
+
+
+.pageHeadingBig{
+    padding: 20px;
+    text-align: center;
+}
+
+.gridViewItem{
+    display: inline-block;
+    margin-right: 50px;
+    width: 29%;
+    max-width: 200px;
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.gridViewItem img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.gridViewItem a {
+    text-decoration: none;
+}
+
+.gridViewInfo{
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.entityInfo{
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.entityInfo .leftSection{
+    width: 30%;
+    float: left;
+    max-width: 250px;
+}
+
+.entityInfo .leftSection img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.entityInfo .rightSection{
+    width: 70%;
+    float: left;
+    padding: 5px 10px 5px 40px;
+    box-sizing: border-box;
+}
+
+.entityInfo .rightSection h2{
+    margin-top: 0px;
+}
+
+.entityInfo .rightSection p{
+    color: #939393;
+    font-weight: 200;
+}
+
+
+.trackList{
+    padding: 0px;
+}
+
+.trackListRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.trackListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.trackListRow:hover{
+    background-color: #282828;
+}
+
+.trackListRow .trackCount{
+    width: 8%;
+    float: left;
+}
+
+.trackListRow .trackCount img{
+    width: 20px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.trackListRow:hover .trackCount img{
+    visibility: visible;
+}
+
+.trackListRow .trackCount span{
+    visibility: visible;
+}
+
+.trackListRow:hover .trackCount span{
+    visibility: hidden;
+}
+
+.trackListRow .trackInfo{
+    width: 75%;
+    float: left;
+}
+
+.trackListRow .trackInfo span{
+    display: block;
+}
+
+.trackListRow .trackInfo .trackName{
+    margin-bottom: 7px;
+}
+
+.trackListRow .trackOptions{
+    width: 5%;
+    float: left;
+    text-align: left;
+}
+
+.trackListRow .trackOptions img{
+    width: 20px; 
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.trackListRow:hover .trackOptions img{
+    visibility: visible;
+}
+
+.trackListRow .trackDuration{
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+
+
+.artistInfo{
+    text-align: center;
+}
+
+.button{
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border: 2px solid;
+    border-radius: 500px;
+    padding: 15px;
+    min-width: 130px;
+}
+
+.button.green{
+    background-color: #2ebd59;
+    border-color: #2ebd59;
+}
+
+.borderBottom{
+    border-bottom: 1px solid #939393;
+    margin-bottom: 20px;
+}
+
+.trackListContainer h2, 
+.gridViewContainer h2, 
+.artistsContainer h2,
+.songListContainer h2{
+    text-align: center;
+}
+
+/*.gridViewContainer{
+    text-align: center;
+}*/
+
+[role="link"]{
+    cursor: pointer;
+}
+
+.searchContainer{
+    background-color: #242424;
+    padding: 20px 28px;
+}
+
+.searchContainer h4{
+    margin: 0;
+    font-weight: 300;
+}
+
+.searchContainer .searchInput{
+    background-color: transparent;
+    border: none;
+    color: #ffff;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+.searchResultRow{
+    padding: 15px 10px;
+}
+
+.searchResultRow:hover{
+    background-color: #282828;
+}
+
+.searchResultRow .artistName span{
+    color: #fff;
+}
+
+.noResults{
+    margin: 15px;
+    display: block;
+}
+
+
+.buttonItems button{
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.playlistsContainer{
+    padding: 10px 0;
+}
+
+.playlistImage img{
+    border: 3px solid #282828;
+    padding: 10px;
+}
+
+.optionsMenu{
+    position: fixed;
+    background-color: #282828;
+    width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    z-index: 1000;
+    display: none;
+}
+
+.optionsMenu .item{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-weight: 4000;
+    color: rgba(147, 147, 147, 0.8);
+    cursor: pointer;
+    height: 40px;
+    background-color: #282828;
+    font-size: 14px;
+}
+
+.optionsMenu .item:hover{
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+}
+
+.optionsMenu select{
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.userInfo{
+    text-align: center;
+}
+
+.userInfo img{
+    margin-bottom: 20px;
+    border: 3px solid #a0a0a0;
+    border-radius: 100px;
+}
+
+.userDetails{
+    padding: 20px;
+}
+
+.userDetails .container h2{
+    text-align: center;
+}
+
+.userDetails .container input[type="text"], 
+.userDetails .container input[type="password"], 
+.userDetails .container .button{
+    display: block;
+    margin: 16px auto;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"]{
+    height: 50px;
+    width: 100%;
+    background-color: #1f1f1f;
+    border: none;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.userDetails .container .message{
+    color: #2ebd59;
+    font-weight: 300;
+}
+
+.buttonGroup{
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.songListContainer, 
+.userListContainer{
+    margin: 50px;
+}
+
+.songList, 
+.userList{
+    padding: 0px;
+}
+
+.songListRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.songListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.songListRow:hover{
+    background-color: #282828;
+}
+
+.songListRow .songCount{
+    width: 5%;
+    float: left;
+}
+
+.songListRow .songCount img{
+    width: 20px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.songListRow:hover .songCount img{
+    visibility: visible;
+}
+
+.songListRow .songCount span{
+    visibility: visible;
+}
+
+.songListRow:hover .songCount span{
+    visibility: hidden;
+}
+
+.songListRow .songInfo{
+    width: 75%;
+    float: left;
+}
+
+.songListRow .songInfo span{
+    display: block;
+}
+
+.songListRow .songInfo .songName{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.songListRow .songOptions{
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+.songListRow .songOptions img{
+    width: 30px; 
+    cursor: pointer;
+}
+
+.userListRow{
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.userListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.userListRow:hover{
+    background-color: #282828;
+}
+
+.userListRow .profilePic{
+    width: 5%;
+    float: left;
+}
+
+.userListRow .profilePic img{
+    width: 40px;
+    position: absolute;
+    border: 2px solid #a0a0a0;
+    border-radius: 100%;
+}
+
+.userListRow .userInfo{
+    width: 75%;
+    float: left;
+}
+
+.userListRow .userInfo span{
+    display: block;
+}
+
+.userListRow .userInfo .username{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.userListRow .roleInfo{
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.userListRow .userOptions{
+    width: 10%;
+    float: left;
+    text-align: right;
+}
+
+.userListRow .userOptions img{
+    width: 30px; 
+    cursor: pointer;
+}
+
+
+
+
+
+
+.spotifyTrackList{
+    padding: 0px;
+}
+
+.spotifyTrackListRow{
+    text-align: center;
+    height: 70px;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+.spotifyTrackListRow span{
+    color: #939393;
+    font-weight: 200;
+}
+
+.spotifyTrackListRow:hover{
+    background-color: #282828;
+}
+
+.spotifyTrackListRow .spotifyTrackCount{
+    width: 8%;
+    float: left;
+}
+
+.spotifyTrackListRow .spotifyTrackCount img{
+    width: 4%;
+    border: 1px solid #939393;
+    position: absolute;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo{
+    width: 62%;
+    float: left;
+    margin: 10px;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo span{
+    display: block;
+}
+
+.spotifyTrackListRow .spotifyTrackInfo .spotifyTrackName{
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.spotifyTrackListRow .spotifyTrackOptions{
+    width: 5%;
+    float: left;
+    text-align: left;
+}
+
+.spotifyTrackListRow .spotifyTrackOptions img{
+    width: 30px;
+    visibility: hidden;
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.spotifyTrackListRow:hover .spotifyTrackOptions img{
+    visibility: visible;
+}
+
+.spotifyTrackListRow .spotifyTrackDuration{
+    width: 15%;
+    float: left;
+    text-align: right;
+    padding: 30px 10px;
+}

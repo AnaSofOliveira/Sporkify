@@ -9,7 +9,6 @@ var shuffle = false;
 var userLoggedIn; 
 var timer; 
 
-
 $(document).click(function(click) {
 	var target = $(click.target);
 
@@ -46,8 +45,8 @@ function changeThemeMode(){
     if(dark){
         //ativar light mode e alterar texto do botão
         $("body").toggleClass("dark"); 
-        
-        $(".mainViewContainer").css("color", "#fff");
+
+        $(".mainViewContainer").css("color", "#000");
         $("body").css("background-color", "#181818");
 
         $(".button").css("border", "2px solid #fff");
@@ -60,8 +59,8 @@ function changeThemeMode(){
     }else{
         //ativar dark mode e alterar texto do botão
         $("body").toggleClass("dark"); 
-
-        $(".mainViewContainer").css("color", "#000");
+        
+        $(".mainViewContainer").css("color", "#fff");
         $("body").css("background-color", "#F5EDDC");
         $(".button").css("border", "2px solid #000");
         $(".button").css("color", "#000");

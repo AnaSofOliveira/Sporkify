@@ -8,10 +8,11 @@ body{
 *{
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     letter-spacing: 1px;
+    color: #000;
 }
 
 body{
-    background-color: #181818;
+    background-color: #fff;
     font-size: 14px;
     min-width: 720px;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -20,7 +21,8 @@ body{
 
 
 #dark{
-    background-color: #F5EDDC;
+    color: #000;
+    background-color: #B7C4CF;
 }
 
 body::-webkit-scrollbar{
@@ -29,7 +31,7 @@ body::-webkit-scrollbar{
 
 #nowPlayingBarContainer{
     width: 100%;
-    background-color: #282828;
+    background-color: #d7d4bf;
     bottom: 0;
     position: fixed;
     min-width: 620px;
@@ -92,7 +94,7 @@ body::-webkit-scrollbar{
 }
 
 .progressTime{
-    color: #a0a0a0;
+    color: #6a6867;
     font-size: 11px;
     min-width: 40px;
     text-align: center;
@@ -113,14 +115,14 @@ body::-webkit-scrollbar{
 }
 
 .progressBarBackground{
-    background-color: #404040;
+    background-color: #fff;
     height: 4px;
     width: 100%;
     border-radius: 2px;
 }
 
 .progress{
-    background-color: #a0a0a0;
+    background-color: #256960;
     height: 4px;
     width: 0%; /* Varia consoante o tempo de musica reproduzido*/
     border-radius: 2px;
@@ -145,13 +147,13 @@ body::-webkit-scrollbar{
     width: 100%;
 }
 
-#nowPlayingLeft .trackInfo .artistName span{
-    color: #fff;
+#nowPlayingLeft .trackInfo .trackName span{
+    color: #256960;
 }
 
 #nowPlayingLeft .trackInfo .artistName span{
     font-size: 12px;
-    color: #a0a0a0;
+    color: #6a6867;
 }
 
 .volumeBar{
@@ -170,7 +172,7 @@ body::-webkit-scrollbar{
 }
 
 #navBarContainer{
-    background-color: #000;
+    background-color: #fcf2e3;
     width: 220px;
     height: 100vh;
     position: fixed;
@@ -197,7 +199,7 @@ body::-webkit-scrollbar{
 }
 
 .navBar .group{
-    border-top:  1px solid #a0a0a0;
+    border-top:  1px solid #6a6867;
     padding: 10px 0;
 }
 
@@ -211,7 +213,7 @@ body::-webkit-scrollbar{
 }
 
 .navItemLink{
-    color: #a0a0a0;
+    color: #6a6867;
     text-decoration: none;
 }
 
@@ -227,11 +229,11 @@ body::-webkit-scrollbar{
 }
 
 .navItemLink:hover{
-    color: #fff;
+    color: #256960;
 }
 
 #mainViewContainer{
-    color: #fff;
+    color: #000;
     margin-left: 220px;
     padding-bottom: 90px;
     width: calc(100% - 220px);
@@ -305,7 +307,7 @@ body::-webkit-scrollbar{
 }
 
 .entityInfo .rightSection p{
-    color: #939393;
+    color: #4e4e4e;
     font-weight: 200;
 }
 
@@ -321,12 +323,13 @@ body::-webkit-scrollbar{
 }
 
 .trackListRow span{
-    color: #939393;
+    color: #4e4e4e;
     font-weight: 200;
 }
 
 .trackListRow:hover{
-    background-color: #282828;
+    background-color: #f9efe699;
+    border-radius: 15px;
 }
 
 .trackListRow .trackCount{
@@ -363,7 +366,6 @@ body::-webkit-scrollbar{
 }
 
 .trackListRow .trackInfo .trackName{
-    color: #fff;
     margin-bottom: 7px;
 }
 
@@ -395,7 +397,7 @@ body::-webkit-scrollbar{
 }
 
 .button{
-    color: #fff;
+    color: #000;
     cursor: pointer;
     margin-bottom: 10px;
     background-color: transparent;
@@ -413,7 +415,7 @@ body::-webkit-scrollbar{
 }
 
 .borderBottom{
-    border-bottom: 1px solid #939393;
+    border-bottom: 1px solid #4e4e4e;
     margin-bottom: 20px;
 }
 
@@ -433,7 +435,7 @@ body::-webkit-scrollbar{
 }
 
 .searchContainer{
-    background-color: #242424;
+    background-color: #b0bcc7;
     padding: 20px 28px;
 }
 
@@ -445,7 +447,7 @@ body::-webkit-scrollbar{
 .searchContainer .searchInput{
     background-color: transparent;
     border: none;
-    color: #ffff;
+    color: #000f;
     font-weight: 700;
     font-size: 40px;
     letter-spacing: 1px;
@@ -461,11 +463,12 @@ input:focus{
 }
 
 .searchResultRow:hover{
-    background-color: #282828;
+    background-color: #eee3cb45;
+    border-radius: 15px;
 }
 
 .searchResultRow .artistName span{
-    color: #fff;
+    color: #000;
 }
 
 .noResults{
@@ -511,7 +514,7 @@ input:focus{
 }
 
 .optionsMenu .item:hover{
-    color: #fff;
+    color: #000;
     background-color: #333;
     border-color: #333;
 }
@@ -528,7 +531,7 @@ input:focus{
 
 .userInfo img{
     margin-bottom: 20px;
-    border: 3px solid #a0a0a0;
+    border: 3px solid #6a6867;
     border-radius: 100px;
 }
 
@@ -551,7 +554,7 @@ input:focus{
 .userDetails .container input[type="password"]{
     height: 50px;
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: #ffc9c6;
     border: none;
     font-size: 18px;
     font-weight: 300;
@@ -586,7 +589,7 @@ input:focus{
 }
 
 .songListRow span{
-    color: #939393;
+    color: #4e4e4e;
     font-weight: 200;
 }
 
@@ -628,7 +631,7 @@ input:focus{
 }
 
 .songListRow .songInfo .songName{
-    color: #fff;
+    color: #000;
     margin-bottom: 7px;
 }
 
@@ -650,7 +653,7 @@ input:focus{
 }
 
 .userListRow span{
-    color: #939393;
+    color: #4e4e4e;
     font-weight: 200;
 }
 
@@ -666,7 +669,7 @@ input:focus{
 .userListRow .profilePic img{
     width: 40px;
     position: absolute;
-    border: 2px solid #a0a0a0;
+    border: 2px solid #6a6867;
     border-radius: 100%;
 }
 
@@ -680,7 +683,7 @@ input:focus{
 }
 
 .userListRow .userInfo .username{
-    color: #fff;
+    color: #000;
     margin-bottom: 7px;
 }
 
@@ -718,12 +721,13 @@ input:focus{
 }
 
 .spotifyTrackListRow span{
-    color: #939393;
+    color: #4e4e4e;
     font-weight: 200;
 }
 
 .spotifyTrackListRow:hover{
-    background-color: #282828;
+    background-color: #eee3cb45;
+    border-radius: 15px;
 }
 
 .spotifyTrackListRow .spotifyTrackCount{
@@ -733,7 +737,7 @@ input:focus{
 
 .spotifyTrackListRow .spotifyTrackCount img{
     width: 4%;
-    border: 1px solid #939393;
+    border: 1px solid #4e4e4e;
     position: absolute;
 }
 
@@ -750,7 +754,7 @@ input:focus{
 }
 
 .spotifyTrackListRow .spotifyTrackInfo .spotifyTrackName{
-    color: #fff;
+    color: #000;
     margin-bottom: 7px;
 }
 
@@ -777,3 +781,4 @@ input:focus{
     text-align: right;
     padding: 30px 10px;
 }
+
