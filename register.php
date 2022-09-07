@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/register.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>   
 
@@ -93,6 +94,9 @@
                         <label for="password2">Confirm password</label>
                         <input id="password2" name="password2" type="password" placeholder="Your password" required>
                     </p>
+                    
+                    <div class="g-recaptcha" data-sitekey="6Lep6N4hAAAAACTsOFu0Pv6j-6j5RUQ9ttgL8rEz"></div>
+
                     <button type="submit" name="registerButton">Sign Up</button>
                     
                 </form>
