@@ -66,6 +66,8 @@ function applyTheme(){
 
         $(".group span img").attr("src", "assets/images/icons/dark/search.png");
 
+        $("#mode").html("Light Mode");
+
     }else{
         $("#style").attr("href", "assets/css/lightTheme.css");
         $(".play img").attr("src", "assets/images/icons/light/play.png");
@@ -86,6 +88,7 @@ function applyTheme(){
 
         $(".group span img").attr("src", "assets/images/icons/light/search.png");
 
+        $("#mode").html("Dark Mode");
     }  
 }
 
