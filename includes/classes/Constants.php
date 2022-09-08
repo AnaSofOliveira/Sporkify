@@ -16,6 +16,13 @@
 
         // Login Error Messages
         public static $loginFailed = "Your username or password was incorrect";
+        public static $accountNotValid = "Your account is not active. Please validate your e-mail.";
+
+        // Erro no registo da conta
+        public static $registerError = "Error registering the account. Please try again later.";
+
+        // Conta criada
+        public static $accountCreated = "Your account has been created. Please validate your e-mail.";
     
     }
 

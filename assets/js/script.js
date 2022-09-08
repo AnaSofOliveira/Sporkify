@@ -57,6 +57,7 @@ function applyTheme(){
         $(".volume img").attr("src", "assets/images/icons/dark/volume.png");
         
         $(".trackCount .play").attr("src", "assets/images/icons/dark/play-white.png");
+        $(".songCount .play").attr("src", "assets/images/icons/dark/play-white.png");
         $(".trackOptions .optionsButton").attr("src", "assets/images/icons/dark/more.png");
         $(".songOptions .optionsButton").attr("src", "assets/images/icons/dark/trash.png");
 
@@ -79,6 +80,7 @@ function applyTheme(){
         $(".volume img").attr("src", "assets/images/icons/light/volume.png");
 
         $(".trackCount .play").attr("src", "assets/images/icons/light/play-white.png");
+        $(".songCount .play").attr("src", "assets/images/icons/light/play-white.png");
         $(".trackOptions .optionsButton").attr("src", "assets/images/icons/light/more.png");
         $(".songOptions .optionsButton").attr("src", "assets/images/icons/light/trash.png");
 

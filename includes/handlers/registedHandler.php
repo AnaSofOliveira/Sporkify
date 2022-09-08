@@ -1,4 +1,8 @@
 <?php
+    include("includes/classes/User.php");
+    include("includes/classes/Email.php");
+    
+
     function sanitizeFormUsername($inputText){ 
         // Remove todos os elementos html que podem ter sido inseridos no campo
         $inputText = strip_tags($inputText); 
@@ -12,7 +16,7 @@
         $inputText = str_replace(" ", "", $inputText);
         // Coloca a primeira letra em uppercase, no entanto primeiro
         // é necessário colocar todo o input com letras minusculas
-        $inputText = ucfirst(strtolower($inputText)); 
+        $inputText = strtolower($inputText); 
         return $inputText; 
     }
 
@@ -44,15 +48,46 @@
                 $password = sanitizeFormString($_POST['password']);
                 $password2 = sanitizeFormString($_POST['password2']);
 
-                $wasSuccessfull = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
+                mysqli_autocommit($con, false);
+                mysqli_begin_transaction($con);
+
+                try{
+
+                    $wasSuccessfull = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
+
+                    if($wasSuccessfull){
+                        $user = new User($con, $username);
+                        $challenge = $account->generate_challenge($user);
+                    }
+
+                    mysqli_commit($con);
+
+                }catch(mysqli_sql_exception $exception){
+                    $account->setError(Constants::$registerError);
+                    mysqli_rollback($con);
+                    exit();
+                }
+                
                 if($wasSuccessfull){
-                    $_SESSION['userLoggedIn'] = $username;
-                    header("Location: index.php");
+                    // Enviar e-mail
+                    $email = new Email($con); 
+                    $emailSent = $email->sendEmail($user);
+
+                    if($emailSent){
+                        $account->setError(Constants::$accountCreated);
+                    }
                 }
 
+                /* if($wasSuccessfull){
+                    $_SESSION['userLoggedIn'] = $username;
+                    header("Location: index.php");
+                } */
+
             }
+            
         }
     }
+    
 
 ?>

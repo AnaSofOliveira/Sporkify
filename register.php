@@ -39,6 +39,7 @@
                         <input id="loginPassword" name="loginPassword" type="password" required>
                     </p>
                     <?php echo $account->getError(Constants::$loginFailed); ?>
+                    <?php echo $account->getError(Constants::$accountNotValid); ?>
                     <button type="submit" name="loginButton">Login</button>
 
                 </form>
@@ -96,6 +97,8 @@
                     </p>
                     
                     <div class="g-recaptcha" data-sitekey="6Lep6N4hAAAAACTsOFu0Pv6j-6j5RUQ9ttgL8rEz"></div>
+                    <?php echo $account->getError(Constants::$registerError); ?>
+                    <?php echo $account->getError(Constants::$accountCreated); ?>
 
                     <button type="submit" name="registerButton">Sign Up</button>
                     

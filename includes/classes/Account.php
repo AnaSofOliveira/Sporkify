@@ -15,13 +15,22 @@
 
             $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
 
-            if(mysqli_num_rows($query) == 1){
+            $state = mysqli_fetch_array($query)["state"];
+            $num_results = mysqli_num_rows($query);
+
+            echo "State: ".$state." | num_results: ".$num_results;
+
+            if($num_results == 1 && $state){
                 return true;
+            }elseif($num_results == 1 && !$state){
+                echo "accountNotValid";
+                array_push($this->errorArray, Constants::$accountNotValid);
+                return false;
             }else{
+                echo "loginFailed";
                 array_push($this->errorArray, Constants::$loginFailed);
                 return false;
             }
-
         }
 
         public function register($un, $fn, $ln, $em, $em2, $pw, $pw2){
@@ -47,15 +56,38 @@
             return "<span class='errorMessage'>$error</span>";
         }
 
+        public function setError($error){
+            array_push($this->errorArray, $error);
+        }
+
         private function insertUserDetais($un, $fn, $ln, $em, $pw){
             $encrypetedPw = md5($pw); 
             $profilePic = "assets/images/profile-pics/profile.png";
             $date = date("Y-m-d");
 
-            $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic, role) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic', 'user')");
+            $result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, signUpDate, profilePic, role, state) VALUES ('$un', '$fn', '$ln', '$em', '$encrypetedPw', '$date', '$profilePic', 'user', '0')");
 
             return $result;
             
+        }
+
+        function generate_challenge($user){
+
+            $username = $user->getUsername(); 
+            $email = $user->getEmail();
+
+            $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$username'");
+            $row = mysqli_fetch_array($query);
+
+            $userId = $row['id'];
+            $md5_code = md5($username.$email);
+
+            $result = mysqli_query($this->con, "INSERT INTO challenges(idUser, challenge) VALUES ('$userId','$md5_code')");
+        
+            $query = mysqli_query($this->con, "SELECT * FROM challenges WHERE idUser='$userId'");
+            $row = mysqli_fetch_array($query);
+
+            return $row['challenge'];
         }
 
         private function validateUsername($un){

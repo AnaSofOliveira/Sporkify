@@ -594,7 +594,7 @@ input:focus{
 }
 
 .songListRow:hover{
-    background-color: #282828;
+    background-color: #f9efe699;
 }
 
 .songListRow .songCount{

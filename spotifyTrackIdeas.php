@@ -71,8 +71,8 @@
                                 <span class='spotifyArtirsName'>".$artistsName."</span>
                             </div>
 
-                            <div class='spotifyTrackOptions'>
-                                <img class='optionsButton' src='assets/images/icons/spotify_logo.png' onclick='showOptionsMenu(this)'> 
+                            <div class='spotifyTrackOptions' onclick='window.open(\"".$external_spotify_url."\")'>
+                                    <img class='optionsButton' src='assets/images/icons/spotify_logo.png'> 
                             </div>
 
                             <div class='spotifyTrackDuration'>
