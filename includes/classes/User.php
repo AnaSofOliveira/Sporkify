@@ -45,6 +45,13 @@
 
             return $row['role'];
         }
+
+        public function getState(){
+            $query = mysqli_query($this->con, "SELECT state FROM users WHERE username='$this->username'"); 
+            $row = mysqli_fetch_array($query); 
+
+            return $row['state'];
+        }
     }
 
 ?>

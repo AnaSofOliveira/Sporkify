@@ -64,6 +64,7 @@ function applyTheme(){
         $(".userOptions .trash").attr("src", "assets/images/icons/dark/trash.png");
         $(".userOptions .lock_close").attr("src", "assets/images/icons/dark/lock_close.png");
         $(".userOptions .lock_open").attr("src", "assets/images/icons/dark/lock_open.png");
+        $(".userOptions .validate").attr("src", "assets/images/icons/dark/validate.png");
 
         $(".group span img").attr("src", "assets/images/icons/dark/search.png");
 
@@ -87,6 +88,7 @@ function applyTheme(){
         $(".userOptions .trash").attr("src", "assets/images/icons/light/trash.png");
         $(".userOptions .lock_close").attr("src", "assets/images/icons/light/lock_close.png");
         $(".userOptions .lock_open").attr("src", "assets/images/icons/light/lock_open.png");
+        $(".userOptions .validate").attr("src", "assets/images/icons/light/validate.png");
 
         $(".group span img").attr("src", "assets/images/icons/light/search.png");
 

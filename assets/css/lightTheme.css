@@ -688,7 +688,7 @@ input:focus{
     margin-bottom: 7px;
 }
 
-.userListRow .roleInfo{
+.userListRow .roleInfo, .userListRow .stateInfo{
     width: 10%;
     float: left;
     text-align: center;
