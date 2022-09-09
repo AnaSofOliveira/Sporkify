@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <DataBase>
+        <host>localhost</host>
+        <port>3307</port>
+        <db>sporkify</db>
+        <username>admin</username>
+        <password>administrator</password>
+    </DataBase>
+</Config>

@@ -8,7 +8,7 @@
     <div class="buttonItems">
         <button class="button" onclick="openPage('addSong.php')">Add Song</button>
         <button class="button" onclick="openPage('removeSongDetails.php')">Remove Song</button>
-        <button class="button" onclick="openPage('manageUserDetails.php')">Manage User</button>
+        <button class="button" onclick="openPage('manageUserDetails.php')">Manage Users</button>
         <button class="button green" onclick="userLogInRequest()">Spotify Ideas</button>
     </div>
 

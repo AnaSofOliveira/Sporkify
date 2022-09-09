@@ -39,17 +39,12 @@
 
                                     <div class='userOptions'>
                                         <input type='hidden' class='userId' value='" . $id . "'>
-                                        <img class='validate' src='assets/images/icons/dark/validate.png' onclick='validateRegister(".$id."))'
+                                        <img class='validate' src='assets/images/icons/dark/validate.png' onclick='validateRegistration(this)'>
                                     </div>
                                 </li>";                 
                 }
             }
         ?>
-
-        <script>
-            var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
-            tempPlaylist = JSON.parse(tempSongIds);
-        </script>
     </ul>
 </div>
 <div class="userListContainer">

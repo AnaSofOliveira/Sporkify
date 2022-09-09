@@ -15,19 +15,19 @@
 
             $query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
 
-            $state = mysqli_fetch_array($query)["state"];
+            $result = mysqli_fetch_array($query);
             $num_results = mysqli_num_rows($query);
 
-            echo "State: ".$state." | num_results: ".$num_results;
-
-            if($num_results == 1 && $state){
-                return true;
-            }elseif($num_results == 1 && !$state){
-                echo "accountNotValid";
-                array_push($this->errorArray, Constants::$accountNotValid);
-                return false;
+            if($num_results == 1){
+                $state =  $result['state'];
+                
+                if($state){
+                    return true;
+                }else{
+                    array_push($this->errorArray, Constants::$accountNotValid);
+                    return false;
+                }
             }else{
-                echo "loginFailed";
                 array_push($this->errorArray, Constants::$loginFailed);
                 return false;
             }
@@ -62,6 +62,7 @@
 
         private function insertUserDetais($un, $fn, $ln, $em, $pw){
             $encrypetedPw = md5($pw); 
+
             $profilePic = "assets/images/profile-pics/profile.png";
             $date = date("Y-m-d");
 

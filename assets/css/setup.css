@@ -1,0 +1,139 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#background{
+    background-color: #000;
+    background-image: url("../images/bg6.jpg");
+    background-position: center;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+#setupContainer *{
+    color: #4c4a4a;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    line-height: 1em;
+    box-sizing: border-box;
+}
+
+#setupContainer {
+    margin-top: 7%;
+    width: 80%;
+    /* margin: 10% auto; */
+    position: relative;
+    max-width: 1024px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #4c4a4a;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #4c4a4a;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #4c4a4a;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #4c4a4a;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #4c4a4a;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #4c4a4a;
+}
+
+
+#inputContainer h2{
+    text-align: center;
+    font-weight: bold;
+}
+
+#inputContainer input[type="text"], #inputContainer input[type="email"], #inputContainer input[type="password"]{
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #4c4a4a;
+    height: 27px;
+    line-height: 27px;
+    width: 100%;
+}
+
+#inputContainer label{
+    color: #727171;
+    font-size: 13px;
+    margin-top: 15px;
+    display: block;
+}
+
+#inputContainer button{
+    background-color: transparent;
+    border: 2px solid #4c4a4a;
+    border-radius: 250px;
+    color: #4c4a4a;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    height: 41px;
+    width: 100%;
+}
+
+#inputContainer button:hover{
+    cursor: pointer;
+}
+
+#setupForm {
+    padding-left: 20%;
+    padding-right: 40%;
+    padding-top: 10%;
+}
+
+#registerForm{
+    padding-left: 40%;
+    padding-top: 10%;
+}
+
+@media only screen and (max-width: 1080px) {
+    #inputContainer {
+        width: 100%;
+    }
+
+    #loginText {
+        width: 90%;
+    }
+
+    #setupForm{
+        padding: 60px 120px 20px 120px;
+    }
+
+    #registerForm{
+        padding: 60px 120px 0px 120px;
+    }
+
+    #setupContainer {
+        margin: 0px auto;
+    }
+  }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  

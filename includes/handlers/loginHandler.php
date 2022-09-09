@@ -9,7 +9,5 @@
             $_SESSION['userLoggedIn'] = $username;
             header("Location: index.php");
         } 
-
-
     }
 ?>

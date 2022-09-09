@@ -256,6 +256,21 @@ function changePermission(button, role){
 
 }
 
+function validateRegistration(button){
+
+    var userId = $(button).prevAll(".userId").val();
+
+    $.get("validateRegistration.php", {userId: userId})
+        .done(function(error){
+
+            if(error != ""){
+                alert(error);
+                return;
+            }
+            openPage("manageUserDetails.php");
+        })
+}
+
 function hideOptionsMenu() {
 	var menu = $(".optionsMenu");
 	if(menu.css("display") != "none") {
