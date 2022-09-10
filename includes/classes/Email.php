@@ -1,7 +1,7 @@
 <?php
 
-    include ("includes/__private/HtmlMimeMail.php");
-    include ("includes/__private/lib-mail-v2.php");
+    include ("includes/classes/HtmlMimeMail.php");
+    include ("includes/classes/lib-mail-v2.php");
 
     class Email{
 
