@@ -4,7 +4,7 @@
         <host>localhost</host>
         <port>3307</port>
         <db>sporkify</db>
-        <username>admin</username>
-        <password>administrator</password>
+        <username>root</username>
+        <password></password>
     </DataBase>
 </Config>

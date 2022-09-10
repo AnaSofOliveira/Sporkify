@@ -19,7 +19,6 @@
     <script src="assets/js/register.js"></script>
 </head>
 <body>   
-<?php if (!$config_exists) { ?>
     <div id="background">
         <div id="setupContainer">
             <div id="inputContainer">
@@ -51,14 +50,5 @@
 
         </div>
     </div>
-    <?php  } else { ?>
-        <h2>Database has already been configured. You will be redirected to the Sporkify. </h2>
-
-        <script>
-            window.setTimeout(function() {
-                window.location.href = "//<?= $http_host ?>";
-            }, 1 * 1000)
-        </script>
-    <?php  } ?>
 </body>
 </html>

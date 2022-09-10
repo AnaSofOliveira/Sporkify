@@ -13,6 +13,7 @@
 <script>
 
 	$(document).ready(function() {
+
 		var newPlaylist = <?php echo $jsonArray; ?>;
 		audioElement = new Audio();
 		setTrack(newPlaylist[0], newPlaylist, false);
@@ -183,17 +184,22 @@
 		pauseSong();
 
 		$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
-
+			console.log("includes/handlers/ajax/getSongJson.php: ", data);
+			
 			var track = JSON.parse(data);
 			$(".trackName span").text(track.title);
 
 			$.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
+				console.log("includes/handlers/ajax/getArtistJson.php: ", data);
+				
 				var artist = JSON.parse(data);
 				$(".trackInfo .artistName span").text(artist.name);
 				$(".trackInfo .artistName span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
 			});
 
 			$.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
+				console.log("includes/handlers/ajax/getAlbumJson.php: ", data);
+				
 				var album = JSON.parse(data);
 				$(".content .albumLink img").attr("src", album.artworkPath);
 				$(".content .albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
