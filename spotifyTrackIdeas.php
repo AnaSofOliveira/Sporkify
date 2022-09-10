@@ -1,6 +1,8 @@
 <?php
     include("includes/includedFiles.php");
     require ("includes/classes/CurlServer.php");
+
+    include("includes/adminValidation.php");
 ?>
 
 <div class="spotifyTrackListContainer">

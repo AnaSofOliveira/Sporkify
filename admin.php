@@ -1,6 +1,8 @@
 <?php 
     include("includes/includedFiles.php"); 
     require ("includes/__private/spotifyData.php");
+
+    include("includes/adminValidation.php");
 ?>
 
 <div class="buttonGroup">
@@ -13,8 +15,6 @@
     </div>
 
 </div>
-
-
 
 <script>
     const userLogInRequest = () => {

@@ -39,7 +39,7 @@
             $row = mysqli_fetch_array($query); 
             $code = $row['challenge'];
 
-            $validationURL = "http://localhost/examples-smi/Sporkify/validate?";
+            $validationURL = "http://localhost/examples/Sporkify/validate?";
 
             // General info
             $Subject = "Sporkify - Validação do registo";

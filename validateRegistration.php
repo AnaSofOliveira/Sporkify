@@ -1,6 +1,7 @@
 <?php
 
     include("includes/config.php"); 
+    include("includes/adminValidation.php");
 
     if(isset($_GET['userId'])){
         $userId = $_GET['userId'];

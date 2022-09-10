@@ -3,6 +3,8 @@
     include_once ("includes/__private/spotifyData.php");
     include_once ("includes/classes/CurlServer.php");
 
+    include("includes/adminValidation.php");
+
     if(!empty($_GET['code'])){
         
         //Request login

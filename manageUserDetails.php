@@ -1,6 +1,7 @@
 <?php
 
     include("includes/includedFiles.php"); 
+    include("includes/adminValidation.php");
 
 ?>
 

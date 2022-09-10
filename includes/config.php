@@ -1,6 +1,8 @@
 <?php
 
-    $config_filename = getcwd()."../assets/xml/config.xml"; 
+if(!isset($con)){
+
+    $config_filename = "/examples/Sporkify/assets/xml/config.xml"; 
     $configFile = file_exists($config_filename);
 
     /* echo getcwd();
@@ -24,5 +26,6 @@
         if(mysqli_connect_errno()){
             echo "Failed to connect: " . mysqli_connect_errno();
         }
+    }
     /* }   */     
 ?>

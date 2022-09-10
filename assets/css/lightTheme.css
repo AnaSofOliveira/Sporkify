@@ -783,3 +783,16 @@ input:focus{
     padding: 30px 10px;
 }
 
+.permissionInfo{
+    padding: 20% 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.permissions{
+    text-align: center;
+}
+
+.permissions img{
+    margin-bottom: 20px;
+}
