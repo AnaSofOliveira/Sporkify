@@ -47,6 +47,7 @@
                 $password2 = sanitizeFormPassword($_POST['password2']);
 
 
+                echo $username, $firstName, $lastName, $email, $email2, $password, $password2;
                 mysqli_autocommit($con, false);
                 mysqli_begin_transaction($con);
 
@@ -54,20 +55,20 @@
 
                     $wasSuccessfull = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
+                    echo $wasSuccessfull;
                     if($wasSuccessfull){
+                        echo "Vou validar o challenge";
                         $user = new User($con, $username);
                         $challenge = $account->generate_challenge($user);
                     }
-
                     mysqli_commit($con);
 
                 }catch(mysqli_sql_exception $exception){
                     $account->setError(Constants::$registerError);
-                    mysqli_rollback($con);
-                    exit();
+                    mysqli_rollback($con);                    
                 }
                 
-                if($wasSuccessfull){
+                if(isset($wasSuccessfull) && $wasSuccessfull){
                     // Enviar e-mail
                     $email = new Email($con); 
                     $emailSent = $email->sendEmail($user);
@@ -83,7 +84,6 @@
                 } */
 
             }
-            
         }
     }
     

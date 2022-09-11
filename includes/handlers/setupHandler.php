@@ -20,6 +20,6 @@
 
         file_put_contents(dirname(__DIR__, 2)."/assets/xml/config.xml", $data);
 
-        header("Location: ../index.php");
+        header("Location: index.php");
     }
 ?>

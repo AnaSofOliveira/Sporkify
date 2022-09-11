@@ -1,7 +1,7 @@
 <?php
-    include("classes/Constants.php");
+    include("includes/classes/Constants.php");
 
-    include("handlers/setupHandler.php");
+    include("includes/handlers/setupHandler.php");
 
     function getInputValue($name){
         if(isset($_POST[$name])){
@@ -14,7 +14,7 @@
 <html lang="pt">
 <head>
     <title>Configurations</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/setup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/setup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>   
