@@ -12,7 +12,7 @@ if(!isset($con)){
     }else{ */
 
         // read database info from file
-        $aux = simplexml_load_file($config_filename) or die( "Can't read data base configuration file."); 
+        $aux = simplexml_load_file($config_filename) or die( header("Location: includes/setup.php")); 
         $configDatabase = $aux->DataBase[0];
 
         ob_start();

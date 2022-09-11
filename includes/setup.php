@@ -1,7 +1,7 @@
 <?php
-    include("includes/classes/Constants.php");
+    include("classes/Constants.php");
 
-    include("includes/handlers/setupHandler.php");
+    include("handlers/setupHandler.php");
 
     function getInputValue($name){
         if(isset($_POST[$name])){
@@ -14,9 +14,8 @@
 <html lang="pt">
 <head>
     <title>Configurations</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/setup.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/setup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/register.js"></script>
 </head>
 <body>   
     <div id="background">
@@ -34,7 +33,7 @@
                     </p>
                     <p>
                         <label for="databasePassword">Database Password</label>
-                        <input id="databasePassword" name="databasePassword" type="password" required>
+                        <input id="databasePassword" name="databasePassword" type="password">
                     </p>
                     <p>
                         <label for="server">Server</label>

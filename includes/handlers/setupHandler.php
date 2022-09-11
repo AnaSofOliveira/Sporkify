@@ -7,29 +7,19 @@
         $server = $_POST['server']; 
         $port = $_POST['port']; 
 
-        $data = "<?xml version='1.0' encoding='utf-8'>
+        $data = '<?xml version="1.0" encoding="UTF-8"?>
         <Config>
-          <DataBase>
-              <host>".$server."</host>
-              <port>".$port."</port>
-              <db>".$database."</db>
-              <username>".$username."</username>
-              <password>".$password."</password>
-          </DataBase>
-        </Config>";
+            <DataBase>
+                <host>'.$server.'</host>
+                <port>'.$port.'</port>
+                <db>'.$database.'</db>
+                <username>'.$username.'</username>
+                <password>'.$password.'</password>
+            </DataBase>
+        </Config>';
 
-        
+        file_put_contents(dirname(__DIR__, 2)."/assets/xml/config.xml", $data);
 
-
-
-        // Login button was pressed
-        $username = $_POST['loginUsername']; 
-        $password = $_POST['loginPassword']; 
-
-        $result = $account -> login($username, $password);
-        if($result){
-            $_SESSION['userLoggedIn'] = $username;
-            header("Location: index.php");
-        } 
+        header("Location: ../index.php");
     }
 ?>
