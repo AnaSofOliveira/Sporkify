@@ -3,7 +3,7 @@
             <DataBase>
                 <host>localhost</host>
                 <port>3307</port>
-                <db>sporkify</db>
+                <db>adminSporkify</db>
                 <username>root</username>
                 <password></password>
             </DataBase>

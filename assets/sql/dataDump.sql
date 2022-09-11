@@ -129,10 +129,5 @@ INSERT INTO `email-accounts` (`accountName`, `smtpServer`, `port`, `useSSL`, `ti
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `firstName`, `lastName`, `email`, `password`, `signUpDate`, `profilePic`) VALUES
-(1, 'reece-kenney', 'Reece', 'Kenney', 'Reece@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2017-06-28 00:00:00', 'assets/images/profile-pics/head_emerald.png'),
-(2, 'donkey-kong', 'Donkey', 'Kong', 'Dk@yahoo.com', '7c6a180b36896a0a8c02787eeafb0e4c', '2017-06-28 00:00:00', 'assets/images/profile-pics/head_emerald.png'),
-(3, 'simon-cowell', 'Simon', 'Cowell', 'Simon@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2017-10-29 00:00:00', 'assets/images/profile-pics/head_emerald.png'),
-(4, 'simon-cowell1', 'Simon', 'Cowell', 'Simon1@gmail.com', 'password', '2017-11-14 00:00:00', 'assets/images/profile-images/head-emerald.png'),
-(5, 'simon-cowell2', 'Simon', 'Cowell', 'Simon2@gmail.com', 'password', '2017-11-15 00:00:00', 'assets/images/profile-images/head-emerald.png'),
-(6, 'Simon-cowell10', 'Reece', 'Kenney', 'Reecekenney50111@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2017-11-16 00:00:00', 'assets/images/profile-pics/head_emerald.png');
+INSERT INTO `users` (`id`, `username`, `firstName`, `lastName`, `email`, `password`, `signUpDate`, `profilePic`, `role`, `state`) VALUES
+(1, 'AnaOliveira', 'Ana', 'Oliveira', 'ana.as.ac@gmail.com', '135ad1041f7a40e19a4b85880bca660f', CURRENT_TIMESTAMP, 'assets/images/profile-pics/profile.png', 'admin', 1);

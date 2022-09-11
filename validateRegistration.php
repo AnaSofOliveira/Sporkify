@@ -35,7 +35,7 @@
 
             echo "<html lang='pt'>
                     <head>
-                        <title>Welcome to Sporkify</title>
+                        <title>Sporkify</title>
                         <link id='style' rel='stylesheet' type='text/css' href='assets/css/lightTheme.css'>
                         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
                         <script src='assets/js/script.js'></script>
