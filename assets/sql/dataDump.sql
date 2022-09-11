@@ -1,3 +1,5 @@
+USE `sporkify`;
+
 --
 -- Dumping data for table `albums`
 --
